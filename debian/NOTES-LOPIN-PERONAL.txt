@@ -1,0 +1,20 @@
+uscan --download-current-version --verbose
+ ## exit code 25 : dch: fatal error at line 1080: New version specified (4.9.82-1) is less than the current version number (4.9.82-1+deb9u3)!  Use -b to force.
+
+export MAKEFLAGS="-j$(($(nproc)*2))"
+export DEBEMAIL='Martin Lopatář <lopin@dataplex.cz>'
+export DEBIAN_KERNEL_DISABLE_DEBUG=yes
+
+make -f debian/rules orig
+
+dch -l +smb3enc 'lopin +smb3enc featureset'
+
+make -f debian/rules source
+ ## exit code 2
+
+fakeroot make -f debian/rules.gen setup_amd64_smb3enc_amd64
+
+fakeroot make -f debian/rules.gen binary-arch_amd64_smb3enc_amd64
+
+fakeroot make -f debian/rules.gen binary-indep_smb3enc
+

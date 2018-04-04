@@ -1,3 +1,12 @@
+linux (4.9.82-1+deb9u3+smb3enc1) UNRELEASED; urgency=medium
+
+  * Added new featureset 'smb3enc'
+    - applied patches backport SMB3 encryption feature to CIFS module
+      (created by cherry-picking related commits from a newer version of kernel
+      from GIT upstream kernel.org repository)
+
+ -- Martin Lopatář <lopin@dataplex.cz>  Wed, 04 Apr 2018 09:29:14 +0200
+
 linux (4.9.82-1+deb9u3) stretch-security; urgency=medium
 
   * [powerpc] Backport more RFI flush related patches from 4.9.84.  Closes:

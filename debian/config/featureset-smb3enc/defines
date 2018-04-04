@@ -1,0 +1,7 @@
+[abi]
+ignore-changes: *
+
+[description]
+part-long-smb3enc: This kernel includes smb3enc
+part-short-smb3enc: smb3enc
+parts: smb3enc

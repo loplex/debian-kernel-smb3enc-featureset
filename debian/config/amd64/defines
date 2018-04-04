@@ -2,6 +2,7 @@
 featuresets:
  none
  rt
+ smb3enc
 kernel-arch: x86
 
 [build]
